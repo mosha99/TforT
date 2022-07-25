@@ -1,0 +1,56 @@
+﻿using NUnit.Framework;
+using TforT.Controllers;
+using TforT.DataBase;
+using TforT.Models;
+using TforT.Repository;
+using TforT.Services;
+using System.Linq;
+namespace TestProject1
+{
+    public class Tests
+    {
+        UserController _userController;
+        UserService _userService;
+        UserRep _userRep;
+
+
+        [SetUp]
+        public void Setup()
+        {
+            BaseContext context = new moqContext();
+            _userRep = new UserRep(context);
+            _userService = new UserService(_userRep);
+            _userController = new UserController(_userService);
+        }
+
+        [Test]
+        public void TestAdd()
+        {
+            bool Erorr = true;
+
+            var user = new User()
+            {
+                Name = "معین",
+                UserName = "moein"
+            };
+
+            var result1 = _userController.Get().Count;
+            Erorr = Erorr && result1 == 0;
+
+            var result2 = _userController.Post(user);
+            Erorr = Erorr && result2 == true;
+
+            int id = _userController.Get().Single(x => x.UserName == user.UserName).UserId;
+            Erorr = Erorr && id >0;
+
+            string username  = _userController.Get(id).UserName;
+            Erorr = Erorr && username == user.UserName;
+
+
+            if(Erorr) Assert.Pass();
+            Assert.Fail();
+        }
+
+
+    }
+}
