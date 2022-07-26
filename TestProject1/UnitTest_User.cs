@@ -51,5 +51,117 @@ namespace TestProject1
             Assert.Fail();
         }
 
+        [Test]
+        public void TestAdd1()
+        {
+            bool Erorr = true;
+
+            var user = new User()
+            {
+                Name = "معین",
+                UserName = "moein"
+            };
+
+            var result1 = _userController.Get().Count;
+            Erorr = Erorr && result1 == 0;
+
+            var result2 = _userController.Post(user);
+            Erorr = Erorr && result2 == true;
+
+            int id = _userController.Get().Single(x => x.UserName == user.UserName).UserId;
+            Erorr = Erorr && id > 0;
+
+            string username = _userController.Get(id).UserName;
+            Erorr = Erorr && username == user.UserName;
+
+
+            if (Erorr) Assert.Pass();
+            Assert.Fail();
+        }
+
+        [Test]
+        public void TestAdd2()
+        {
+            bool Erorr = true;
+
+            var user = new User()
+            {
+                Name = "معین",
+                UserName = "moein"
+            };
+
+            var result1 = _userController.Get().Count;
+            Erorr = Erorr && result1 == 0;
+
+            var result2 = _userController.Post(user);
+            Erorr = Erorr && result2 == true;
+
+            int id = _userController.Get().Single(x => x.UserName == user.UserName).UserId;
+            Erorr = Erorr && id > 0;
+
+            string username = _userController.Get(id).UserName;
+            Erorr = Erorr && username == user.UserName;
+
+
+            if (Erorr) Assert.Pass();
+            Assert.Fail();
+        }
+
+        [Test]
+        public void TestAdd3()
+        {
+            bool Erorr = true;
+
+            var user = new User()
+            {
+                Name = "معین",
+                UserName = "moein"
+            };
+
+            var result1 = _userController.Get().Count;
+            Erorr = Erorr && result1 == 0;
+
+            var result2 = _userController.Post(user);
+            Erorr = Erorr && result2 == true;
+
+            int id = _userController.Get().Single(x => x.UserName == user.UserName).UserId;
+            Erorr = Erorr && id > 0;
+
+            string username = _userController.Get(id).UserName;
+            Erorr = Erorr && username == user.UserName;
+
+
+            if (Erorr) Assert.Pass();
+            Assert.Fail();
+        }
+
+        [Test]
+        public void TestAdd4()
+        {
+            bool Erorr = true;
+
+            var user = new User()
+            {
+                Name = "معین",
+                UserName = "moein"
+            };
+
+            var result1 = _userController.Get().Count;
+            Erorr = Erorr && result1 == 0;
+
+            var result2 = _userController.Post(user);
+            Erorr = Erorr && result2 == true;
+
+            int id = _userController.Get().Single(x => x.UserName == user.UserName).UserId;
+            Erorr = Erorr && id > 0;
+
+            string username = _userController.Get(id).UserName;
+            Erorr = Erorr && username == user.UserName;
+
+
+            if (Erorr) Assert.Pass();
+            Assert.Fail();
+        }
+
     }
 }

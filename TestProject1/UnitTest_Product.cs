@@ -14,7 +14,6 @@ namespace TestProject1
         ProductService _ProductService;
         ProductRep _ProductRep;
 
-
         [SetUp]
         public void Setup()
         {
@@ -45,7 +44,7 @@ namespace TestProject1
             Erorr = Erorr && id > 0;
 
             string title = _ProductController.Get(id).Title;
-             Erorr = Erorr && title == product.Title;
+            Erorr = Erorr && title == product.Title;
 
 
             if (Erorr) Assert.Pass();
