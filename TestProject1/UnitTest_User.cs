@@ -18,6 +18,7 @@ namespace TestProject1
         public void Setup()
         {
             BaseContext context = new moqContext();
+            //BaseContext context = new realContext();
             _userRep = new UserRep(context);
             _userService = new UserService(_userRep);
             _userController = new UserController(_userService);
@@ -41,14 +42,13 @@ namespace TestProject1
             Erorr = Erorr && result2 == true;
 
             int id = _userController.Get().Single(x => x.UserName == user.UserName).UserId;
-            Erorr = Erorr && id >0;
+            Erorr = Erorr && id > 0;
 
-            string username  = _userController.Get(id).UserName;
+            string username = _userController.Get(id).UserName;
             Erorr = Erorr && username == user.UserName;
 
 
-            if(Erorr) Assert.Pass();
-            Assert.Fail();
+            if (!Erorr) Assert.Fail();
         }
 
         [Test]
@@ -75,8 +75,7 @@ namespace TestProject1
             Erorr = Erorr && username == user.UserName;
 
 
-            if (Erorr) Assert.Pass();
-            Assert.Fail();
+            if (!Erorr) Assert.Fail();
         }
 
         [Test]
@@ -103,8 +102,7 @@ namespace TestProject1
             Erorr = Erorr && username == user.UserName;
 
 
-            if (Erorr) Assert.Pass();
-            Assert.Fail();
+            if (!Erorr) Assert.Fail();
         }
 
         [Test]
@@ -131,8 +129,7 @@ namespace TestProject1
             Erorr = Erorr && username == user.UserName;
 
 
-            if (Erorr) Assert.Pass();
-            Assert.Fail();
+            if (!Erorr) Assert.Fail();
         }
 
         [Test]
@@ -159,8 +156,7 @@ namespace TestProject1
             Erorr = Erorr && username == user.UserName;
 
 
-            if (Erorr) Assert.Pass();
-            Assert.Fail();
+            if (!Erorr) Assert.Fail();
         }
 
     }
