@@ -7,7 +7,7 @@ using TforT.Services;
 using System.Linq;
 namespace TestProject1
 {
-    public class Tests
+    public class UnitTest_User
     {
         UserController _userController;
         UserService _userService;
@@ -50,7 +50,6 @@ namespace TestProject1
             if(Erorr) Assert.Pass();
             Assert.Fail();
         }
-
 
     }
 }

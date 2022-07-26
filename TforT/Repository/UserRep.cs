@@ -16,13 +16,13 @@ namespace TforT.Repository
 
         public List<User> GetUser()
         {
-            var users = _Context.users.ToList();
+            var users = _Context.users.AsNoTracking().ToList();
             return users;
         }
 
         public User GetUser(int userId)
         {
-            var user = _Context.users.Single(x => x.UserId == userId);
+            var user = _Context.users.AsNoTracking().Single(x => x.UserId == userId);
             return user;
         }
 

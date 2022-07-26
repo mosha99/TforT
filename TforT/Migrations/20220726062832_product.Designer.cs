@@ -8,8 +8,8 @@ using TforT.DataBase;
 namespace TforT.Migrations
 {
     [DbContext(typeof(realContext))]
-    [Migration("20220725182158_v3")]
-    partial class v3
+    [Migration("20220726062832_product")]
+    partial class product
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,6 +38,23 @@ namespace TforT.Migrations
                         .IsUnique();
 
                     b.ToTable("mobiles");
+                });
+
+            modelBuilder.Entity("TforT.Models.Product", b =>
+                {
+                    b.Property<int>("ProductId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<float>("Price")
+                        .HasColumnType("REAL");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ProductId");
+
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("TforT.Models.User", b =>

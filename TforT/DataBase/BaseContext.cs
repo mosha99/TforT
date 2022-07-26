@@ -12,6 +12,7 @@ namespace TforT.DataBase
         public DbSet<User> users { get; set; }
         public DbSet<Mobile> mobiles { get; set; }
         public DbSet<UserContacts> userContacts { get; set; }
+        public DbSet<Product> products { get; set; }
 
         public virtual void Migrate()
         {
@@ -37,6 +38,11 @@ namespace TforT.DataBase
                 //x.HasOne(uc=>uc.mobile).WithMany(m=>m.Contacts);
                // x.HasOne(uc=>uc.user);
                 x.HasKey(uc => uc.UserContactsId);
+            });
+
+            modelBuilder.Entity<Product>(x =>
+            {
+                x.HasKey(uc => uc.ProductId);
             });
 
             base.OnModelCreating(modelBuilder);

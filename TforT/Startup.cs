@@ -31,6 +31,8 @@ namespace TforT
             services.AddControllersWithViews();
             services.AddTransient<UserService>();
             services.AddTransient<UserRep>();
+            services.AddTransient<ProductRep>();
+            services.AddTransient<ProductService>();
             services.AddTransient<BaseContext , realContext>();
             services.AddSwaggerGen(c =>
             {

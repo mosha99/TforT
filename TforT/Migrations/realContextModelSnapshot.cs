@@ -38,6 +38,23 @@ namespace TforT.Migrations
                     b.ToTable("mobiles");
                 });
 
+            modelBuilder.Entity("TforT.Models.Product", b =>
+                {
+                    b.Property<int>("ProductId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<float>("Price")
+                        .HasColumnType("REAL");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ProductId");
+
+                    b.ToTable("Product");
+                });
+
             modelBuilder.Entity("TforT.Models.User", b =>
                 {
                     b.Property<int>("UserId")
