@@ -1,22 +1,22 @@
-﻿using NUnit.Framework;
+﻿using System;
+using System.Linq;
 using TforT.Controllers;
 using TforT.DataBase;
 using TforT.Models;
 using TforT.Repository;
 using TforT.Services;
-using System.Linq;
-namespace TestProject1
+using Xunit;
+
+namespace TestProject2
 {
-    public class UnitTest_User
+    public class UnitTest1
     {
         UserController _userController;
         UserService _userService;
         UserRep _userRep;
-
-
-        [SetUp]
-        public void Setup()
+        public UnitTest1()
         {
+
             BaseContext context = new moqContext();
             //BaseContext context = new realContext();
             _userRep = new UserRep(context);
@@ -24,8 +24,8 @@ namespace TestProject1
             _userController = new UserController(_userService);
         }
 
-        [Test]
-        public void TestAdd()
+        [Fact]
+        public void Test1()
         {
             bool Erorr = true;
 
@@ -48,12 +48,11 @@ namespace TestProject1
             Erorr = Erorr && username == user.UserName;
 
 
-            if (!Erorr) Assert.Fail();
-            return;
+            if (!Erorr) Assert.True(false);
         }
 
-        [Test]
-        public void TestAdd1()
+        [Fact]
+        public void Test3()
         {
             bool Erorr = true;
 
@@ -76,11 +75,11 @@ namespace TestProject1
             Erorr = Erorr && username == user.UserName;
 
 
-            if (!Erorr) Assert.Fail();
+            if (!Erorr) Assert.True(false);
         }
 
-        [Test]
-        public void TestAdd2()
+        [Fact]
+        public void Test2()
         {
             bool Erorr = true;
 
@@ -103,11 +102,11 @@ namespace TestProject1
             Erorr = Erorr && username == user.UserName;
 
 
-            if (!Erorr) Assert.Fail();
+            if (!Erorr) Assert.True(false);
         }
 
-        [Test]
-        public void TestAdd3()
+        [Fact]
+        public void Test4()
         {
             bool Erorr = true;
 
@@ -130,35 +129,7 @@ namespace TestProject1
             Erorr = Erorr && username == user.UserName;
 
 
-            if (!Erorr) Assert.Fail();
+            if (!Erorr) Assert.True(false);
         }
-
-        [Test]
-        public void TestAdd4()
-        {
-            bool Erorr = true;
-
-            var user = new User()
-            {
-                Name = "معین",
-                UserName = "moein"
-            };
-
-            var result1 = _userController.Get().Count;
-            Erorr = Erorr && result1 == 0;
-
-            var result2 = _userController.Post(user);
-            Erorr = Erorr && result2 == true;
-
-            int id = _userController.Get().Single(x => x.UserName == user.UserName).UserId;
-            Erorr = Erorr && id > 0;
-
-            string username = _userController.Get(id).UserName;
-            Erorr = Erorr && username == user.UserName;
-
-
-            if (!Erorr) Assert.Fail();
-        }
-
     }
 }

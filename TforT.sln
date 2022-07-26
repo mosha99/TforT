@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TforT", "TforT\TforT.csproj", "{968D146D-AE42-4DA5-AF34-84461FF5C4C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TforT", "TforT\TforT.csproj", "{968D146D-AE42-4DA5-AF34-84461FF5C4C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{D2C964F8-E769-4F0B-808B-45A0F5BC6254}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject1", "TestProject1\TestProject1.csproj", "{D2C964F8-E769-4F0B-808B-45A0F5BC6254}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject2", "TestProject2\TestProject2.csproj", "{52DC85EA-139D-4D20-BD17-CD4CE6A478C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D2C964F8-E769-4F0B-808B-45A0F5BC6254}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2C964F8-E769-4F0B-808B-45A0F5BC6254}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2C964F8-E769-4F0B-808B-45A0F5BC6254}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52DC85EA-139D-4D20-BD17-CD4CE6A478C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52DC85EA-139D-4D20-BD17-CD4CE6A478C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52DC85EA-139D-4D20-BD17-CD4CE6A478C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52DC85EA-139D-4D20-BD17-CD4CE6A478C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
